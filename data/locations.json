@@ -1,0 +1,94 @@
+{
+  "locations": [
+    {
+      "name": "Mantra Restaurant",
+      "type": "Restaurant",
+      "id": "19e1545c-8b65-4d83-82f9-7fcad4a23114",
+      "opening-hours": "10:00AM-10:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 2,
+      "coordinates": "x=2,y=2"
+    },
+    {
+      "name": "Goji",
+      "type": "Restaurant",
+      "id": "19e1545c-8b65-4d83-82f9-7fcad4a23115",
+      "opening-hours": "10:00AM-11:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 3,
+      "coordinates": "x=3,y=3"
+    },
+    {
+      "name": "Fire Tiger",
+      "type": "Restaurant",
+      "id": "20e1545c-8b65-4d83-82f9-7fcad4a23114",
+      "opening-hours": "10:00AM-8:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 5,
+      "coordinates": "x=5,y=5"
+    },
+    {
+      "name": "Deseado Steakhaus",
+      "type": "Restaurant",
+      "id": "21e1545c-8b65-4d83-82f9-7fcad4a23114",
+      "opening-hours": "10:00AM-11:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 4,
+      "coordinates": "x=4,y=4"
+    },
+    {
+      "name": "Wawa Berlin",
+      "type": "Restaurant",
+      "id": "30e1545c-8b65-4d83-82f9-7fcad4a23114",
+      "opening-hours": "10:00AM-11:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 1,
+      "coordinates": "x=1,y=1"
+    },
+    {
+      "name": "Ottenthal",
+      "type": "Restaurant",
+      "id": "40e1545c-8b65-4d83-82f9-7fcad4a23115",
+      "opening-hours": "10:00AM-7:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 6,
+      "coordinates": "x=6,y=6"
+    },
+    {
+      "name": "Die Stulle",
+      "type": "Restaurant",
+      "id": "50e1545c-8b65-4d83-82f9-7fcad4a21120",
+      "opening-hours": "10:00AM-8:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 10,
+      "coordinates": "x=10,y=10"
+    },
+    {
+      "name": "Marjellchen",
+      "type": "Restaurant",
+      "id": "50e1545c-8b65-4d83-82f9-7fcad4a23115",
+      "opening-hours": "10:00AM-11:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 7,
+      "coordinates": "x=7,y=7"
+    },
+    {
+      "name": "Restaurant Facil",
+      "type": "Restaurant",
+      "id": "50e1545c-8b65-4d83-82f9-7fcad4a23118",
+      "opening-hours": "10:00AM-8:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 9,
+      "coordinates": "x=9,y=9"
+    },
+    {
+      "name": "Da Jia Le",
+      "type": "Restaurant",
+      "id": "51e1545c-8b65-4d83-82f9-7fcad4a23111",
+      "opening-hours": "10:00AM-8:00PM",
+      "image": "https://tinyurl.com",
+      "radius": 8,
+      "coordinates": "x=8,y=8"
+    }
+  ]
+}
