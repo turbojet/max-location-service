@@ -1,0 +1,28 @@
+// Prisma schema for Bonial restaurant locations.
+//
+// Coordinates are stored as separate integer columns rather than a composite
+// point type. The brief uses an arbitrary integer plane (not lat/lon), and the
+// R-tree consumes plain `x` and `y` numbers; splitting them avoids serialization
+// gymnastics and lets us put a B-tree on `id` only.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Location {
+  id           String @id @db.Uuid
+  name         String
+  type         String
+  openingHours String @map("opening_hours")
+  image        String
+  radius       Int
+  x            Int
+  y            Int
+
+  @@map("locations")
+}
