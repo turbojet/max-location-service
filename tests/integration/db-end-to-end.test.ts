@@ -1,6 +1,11 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { buildAppWithPrisma, type AppHandle } from '../helpers/build-app-prisma.js';
-import { closeTestPrisma, getTestPrisma, isDatabaseReachable, resetLocationsTable } from '../helpers/prisma.js';
+import {
+  closeTestPrisma,
+  getTestPrisma,
+  isDatabaseReachable,
+  resetLocationsTable,
+} from '../helpers/prisma.js';
 
 const dbReachable = await isDatabaseReachable();
 
@@ -100,9 +105,7 @@ describe.skipIf(!dbReachable)('Postgres-backed end-to-end flow', () => {
     handle = await buildAppWithPrisma(prisma);
     const token = await authToken(handle, 'writer');
 
-    const bodies = ['v1', 'v2', 'v3'].map((name, i) =>
-      makeBody(name, `x=${i + 1},y=${i + 1}`),
-    );
+    const bodies = ['v1', 'v2', 'v3'].map((name, i) => makeBody(name, `x=${i + 1},y=${i + 1}`));
 
     const responses = await Promise.all(
       bodies.map((body) =>

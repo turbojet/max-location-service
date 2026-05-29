@@ -17,23 +17,12 @@ describe('parseTtlSeconds', () => {
     expect(parseTtlSeconds(' 1h ')).toBe(3600);
   });
 
-  it.each([
-    '',
-    '1w',
-    'h',
-    '1.5h',
-    'abc',
-    '0',
-    '0s',
-    '0m',
-    '0h',
-    '0d',
-    '01h',
-    '-1h',
-    '1 h',
-  ])('rejects invalid TTL %j', (input) => {
-    expect(() => parseTtlSeconds(input)).toThrow(/Invalid TTL/);
-  });
+  it.each(['', '1w', 'h', '1.5h', 'abc', '0', '0s', '0m', '0h', '0d', '01h', '-1h', '1 h'])(
+    'rejects invalid TTL %j',
+    (input) => {
+      expect(() => parseTtlSeconds(input)).toThrow(/Invalid TTL/);
+    },
+  );
 
   it('accepts a bare seconds integer', () => {
     expect(parseTtlSeconds('1')).toBe(1);

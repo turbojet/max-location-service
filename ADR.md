@@ -250,9 +250,9 @@ The requirements call for a token endpoint that issues a token with a role claim
 
 Use environment-configured static clients:
 
-| Client | Role |
-|---|---|
-| `reader` | `read` |
+| Client   | Role    |
+| -------- | ------- |
+| `reader` | `read`  |
 | `writer` | `write` |
 
 `POST /auth/token` accepts strict `{ client_id, client_secret }`, uses timing-safe comparison, and returns an HS256 JWT with `sub`, `role`, `iat`, and `exp`. Client secrets are environment-held machine credentials; no password database or hashing workflow is introduced.
@@ -268,12 +268,12 @@ Use environment-configured static clients:
 
 ### Decision
 
-| Endpoint | Authentication / Authorization |
-|---|---|
-| `POST /auth/token` | public |
-| `GET /ready`, `/docs`, OpenAPI JSON | public |
-| `GET /locations/search`, `GET /locations/{id}` | JWT with `read` or `write` |
-| `PUT /locations/{id}` | JWT with `write` |
+| Endpoint                                       | Authentication / Authorization |
+| ---------------------------------------------- | ------------------------------ |
+| `POST /auth/token`                             | public                         |
+| `GET /ready`, `/docs`, OpenAPI JSON            | public                         |
+| `GET /locations/search`, `GET /locations/{id}` | JWT with `read` or `write`     |
+| `PUT /locations/{id}`                          | JWT with `write`               |
 
 Rate-limit PUT by authenticated token subject, default 20 requests/minute. Rate-limit token issuance by IP, default 10 requests/minute.
 

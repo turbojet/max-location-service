@@ -53,7 +53,10 @@ async function main(): Promise<void> {
   await writeFile(OUT, json);
   const ms = (performance.now() - t0).toFixed(0);
   const sizeMb = (json.length / 1_048_576).toFixed(2);
-  const expectedHits = ((N * Math.PI * ((RADIUS_MAX * (RADIUS_MAX + 1) * (2 * RADIUS_MAX + 1)) / (6 * RADIUS_MAX))) / (COORD_MAX * COORD_MAX)).toFixed(2);
+  const expectedHits = (
+    (N * Math.PI * ((RADIUS_MAX * (RADIUS_MAX + 1) * (2 * RADIUS_MAX + 1)) / (6 * RADIUS_MAX))) /
+    (COORD_MAX * COORD_MAX)
+  ).toFixed(2);
   console.log(`Wrote ${N} rows to ${OUT} (${sizeMb} MB) in ${ms} ms`);
   console.log(`  Coord range: 0..${COORD_MAX - 1}, radius: 1..${RADIUS_MAX}`);
   console.log(`  Expected hits per random query: ≈ ${expectedHits}`);

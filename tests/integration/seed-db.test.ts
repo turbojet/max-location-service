@@ -4,7 +4,12 @@ import { join } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { isDatabaseReachable, getTestPrisma, resetLocationsTable, TEST_DATABASE_URL } from '../helpers/prisma.js';
+import {
+  isDatabaseReachable,
+  getTestPrisma,
+  resetLocationsTable,
+  TEST_DATABASE_URL,
+} from '../helpers/prisma.js';
 
 const exec = promisify(execFile);
 const dbReachable = await isDatabaseReachable();
@@ -67,10 +72,7 @@ describe.skipIf(!dbReachable)('prisma/seed.ts (integration)', () => {
     await writeFile(path, JSON.stringify({ locations: [VALID_LOCATION] }));
     await runSeed(path);
 
-    await writeFile(
-      path,
-      JSON.stringify({ locations: [{ ...VALID_LOCATION, name: 'Updated' }] }),
-    );
+    await writeFile(path, JSON.stringify({ locations: [{ ...VALID_LOCATION, name: 'Updated' }] }));
     await runSeed(path);
 
     const row = await prisma.location.findUnique({ where: { id: VALID_LOCATION.id } });

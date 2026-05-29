@@ -35,7 +35,7 @@ afterEach(async () => {
 });
 
 describe('Requirements example reproduction', () => {
-  it("returns restaurants #2 and #4 (in that order) for the example dataset in the requirements at user (3,2)", async () => {
+  it('returns restaurants #2 and #4 (in that order) for the example dataset in the requirements at user (3,2)', async () => {
     // Dataset from the challenge requirements:
     //   #1 (1,1) r=1
     //   #2 (2,2) r=2

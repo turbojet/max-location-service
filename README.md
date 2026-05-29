@@ -71,14 +71,14 @@ curl -s -H "Authorization: Bearer $TOKEN" \
 
 ## API surface
 
-| Endpoint                      | Auth                   | Role  | Notes                                            |
-| ----------------------------- | ---------------------- | ----- | ------------------------------------------------ |
-| `POST /auth/token`            | none (IP rate-limited) | —     | Returns `{access_token, token_type, expires_in}` |
-| `GET /ready`                  | none                   | —     | `{status: "ready" \| "not_ready"}`               |
-| `GET /docs`                   | none                   | —     | Swagger UI                                       |
-| `GET /locations/search?x=&y=` | Bearer                 | read or write | Sorted by ascending distance             |
-| `GET /locations/{id}`         | Bearer                 | read or write | Canonical detail                         |
-| `PUT /locations/{id}`         | Bearer                 | write | Per-id mutex; rate-limited by `sub`              |
+| Endpoint                      | Auth                   | Role          | Notes                                            |
+| ----------------------------- | ---------------------- | ------------- | ------------------------------------------------ |
+| `POST /auth/token`            | none (IP rate-limited) | —             | Returns `{access_token, token_type, expires_in}` |
+| `GET /ready`                  | none                   | —             | `{status: "ready" \| "not_ready"}`               |
+| `GET /docs`                   | none                   | —             | Swagger UI                                       |
+| `GET /locations/search?x=&y=` | Bearer                 | read or write | Sorted by ascending distance                     |
+| `GET /locations/{id}`         | Bearer                 | read or write | Canonical detail                                 |
+| `PUT /locations/{id}`         | Bearer                 | write         | Per-id mutex; rate-limited by `sub`              |
 
 Errors use a single envelope: `{error: {code, message, details?}}`.
 

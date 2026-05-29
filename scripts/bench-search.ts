@@ -19,9 +19,7 @@ import type { Location } from '../src/schemas/location.js';
 const JSON_PATH = process.env.BENCH_JSON ?? 'data/locations_big.json';
 const QUERY_COUNT = Number(process.env.BENCH_QUERIES ?? 1000);
 const WARMUP = Number(process.env.BENCH_WARMUP ?? 100);
-const SYNTHETIC_N = process.env.BENCH_SYNTHETIC_N
-  ? Number(process.env.BENCH_SYNTHETIC_N)
-  : null;
+const SYNTHETIC_N = process.env.BENCH_SYNTHETIC_N ? Number(process.env.BENCH_SYNTHETIC_N) : null;
 const COORD_MAX = Number(process.env.BENCH_COORD_MAX ?? 10_000);
 const RADIUS_MAX = Number(process.env.BENCH_RADIUS_MAX ?? 100);
 
@@ -105,7 +103,9 @@ function generateSyntheticLocations(n: number, coordMax: number, radiusMax: numb
 async function main(): Promise<void> {
   let locations: Location[];
   if (SYNTHETIC_N !== null) {
-    console.log(`Generating ${SYNTHETIC_N} synthetic locations (coord 0..${COORD_MAX}, radius 1..${RADIUS_MAX})...`);
+    console.log(
+      `Generating ${SYNTHETIC_N} synthetic locations (coord 0..${COORD_MAX}, radius 1..${RADIUS_MAX})...`,
+    );
     const t0 = performance.now();
     locations = generateSyntheticLocations(SYNTHETIC_N, COORD_MAX, RADIUS_MAX);
     console.log(`Generated in ${(performance.now() - t0).toFixed(2)}ms.`);

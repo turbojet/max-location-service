@@ -18,9 +18,7 @@ export class PrismaLocationRepository implements LocationRepository {
   constructor(private readonly prisma: PrismaClient) {}
 
   async findAll(): Promise<Location[]> {
-    const rows = await this.guard(() =>
-      this.prisma.location.findMany({ orderBy: { id: 'asc' } }),
-    );
+    const rows = await this.guard(() => this.prisma.location.findMany({ orderBy: { id: 'asc' } }));
     return rows.map(rowToLocation);
   }
 
